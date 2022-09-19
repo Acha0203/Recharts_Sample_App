@@ -8,16 +8,21 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
-import { studyData } from '../studyData';
+import studyDataList from './studyData';
 
-const StudyChart = (): JSX.Element => {
+const StudyChart = () => {
   return (
     <div className="container">
       <LineChart
         width={700}
         height={300}
-        data={studyData}
-        margin={{ top: 5, right: 20, left: 20, bottom: 5 }}
+        data={studyDataList}
+        margin={{
+          top: 5,
+          right: 20,
+          left: 20,
+          bottom: 5,
+        }}
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="date" />
