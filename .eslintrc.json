@@ -20,6 +20,7 @@
   },
   "plugins": ["react", "@typescript-eslint", "import"],
   "rules": {
+    "comma-dangle": ["error", "always-multiline"],
     "import/no-unresolved": "off",
     "import/extensions": [
       2,
@@ -31,6 +32,7 @@
         "tsx": "never"
       }
     ],
+    "object-curly-newline": ["off"],
     "react/jsx-filename-extension": [
       "error",
       { "extensions": [".jsx", ".tsx"] }

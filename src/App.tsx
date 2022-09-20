@@ -2,11 +2,10 @@ import React from 'react';
 import './App.css';
 import StudyChart from './components/StudyChart';
 
-function App() {
-  return (
-  <div className='App'>
+const App = () => (
+  <div className="App">
     <StudyChart />
-  </div>);
-}
+  </div>
+);
 
 export default App;
