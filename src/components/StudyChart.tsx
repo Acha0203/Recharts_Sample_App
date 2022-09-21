@@ -21,9 +21,8 @@ const divStyle = {
 };
 
 const StudyChart = () => {
-  // const [currentDate, setCurrentDate] = useState('10/01');
-
   const getAccuracy = (date: string): number => {
+    // 日付から正解率を取得する
     for (let i = 0; i < studyDataList.length; i += 1) {
       if (studyDataList[i].date === date) {
         return studyDataList[i].正解率;
@@ -34,6 +33,7 @@ const StudyChart = () => {
   };
 
   const getMessage = (accuracy: number): string => {
+    // 正解率に応じたメッセージを取得する
     let message = '';
     if (accuracy > 90) {
       message = '🎉大変よくできました🎊';
@@ -47,7 +47,7 @@ const StudyChart = () => {
   };
 
   const handleClickXAxis = (event: never): void => {
-    // eslint-disable-next-line no-console, dot-notation, no-alert
+    // eslint-disable-next-line dot-notation, no-alert
     alert(getMessage(getAccuracy(event['value'])));
   };
 
