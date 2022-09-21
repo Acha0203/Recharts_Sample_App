@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Recharts Sample App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Zenn の記事「【React + Typescript】Rechartsのグラフをカスタマイズする」のサンプルコードです。
+
+***
 
 ## Available Scripts
 

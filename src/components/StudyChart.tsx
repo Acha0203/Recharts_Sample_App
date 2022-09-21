@@ -8,6 +8,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
+import { RechartsDotPayload, StudyData } from '../types';
 import studyDataList from './studyData';
 
 const pStyle = {
@@ -51,6 +52,15 @@ const StudyChart = () => {
     alert(getMessage(getAccuracy(event['value'])));
   };
 
+  const handleClickDot = (payload: unknown): void => {
+    const dotPayload = payload as Record<keyof RechartsDotPayload, unknown>;
+    const studyData = dotPayload.payload as Record<keyof StudyData, unknown>;
+    if (typeof studyData.date === 'string') {
+      // eslint-disable-next-line no-alert
+      alert(getMessage(getAccuracy(studyData.date)));
+    }
+  };
+
   return (
     <div className="container">
       <LineChart
@@ -87,6 +97,10 @@ const StudyChart = () => {
           stroke="#ff0092"
           strokeWidth={2}
           unit="%"
+          activeDot={{
+            onClick: (_e, payload) => handleClickDot(payload),
+            cursor: 'pointer',
+          }}
         />
         <Legend
           verticalAlign="top"
